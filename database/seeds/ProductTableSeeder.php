@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
+
 use App\Product; 
 use App\Category; 
 use App\Picture; 
@@ -35,17 +36,32 @@ class ProductTableSeeder extends Seeder
             $product->save(); // il faut sauvegarder l'association pour faire persister en base de données
 
              // ajout des images
+             $directory = '/images/'; // public/images
+             $files = Storage::allFiles($directory);
+             $randomFile = $files[rand(0,count($files)-1)];
+
+            /*
+             if($files = \Storage::disk('local')->allFiles('images')) {
+                $path = $files[array_rand($files)];
+             }
+
+             $randomFile = $files[rand(0, count($files) - 1)];
+             */
+
 /*
+            
             $link = str_random(12) . '.jpg'; 
             $file = file_get_contents('' . rand(1, 9)); 
             Storage::disk('local')->put($link, $file);
 
-            $book->picture()->create([
+            $product->picture()->create([
                 'title' => 'Default', 
                 'link' => $link
             ]);
 
             */
+
+        
 
         }); 
     }
