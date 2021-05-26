@@ -1,5 +1,7 @@
+
+
 <nav class="navbar navbar-default">
-  <div class="container-fluid">
+  <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <a class="navbar-brand" href="/">{{config('app.name')}}</a>
@@ -21,6 +23,8 @@
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
+  </div>
 </nav>
+
 
 

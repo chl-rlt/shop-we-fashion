@@ -7,13 +7,16 @@
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-8">
             @if(count((array)$product->picture) > 0)
-                <img src="" class="img-responsive" alt="Responsive image">
+                <img src="{{asset('images/'.$product->picture)}}" class="img-responsive" alt="Responsive image">
             @endif
                 <h2>Description :</h2>
-                {{$product->description}}   
+                <p>{{$product->description}}<p> 
+                <p>ref : {{$product->reference}}</p>  
             </div>
             <div class="col-xs-6 col-md-4">
                 <h3>{{$product->name}}</h3>
+                <p class="price">{{$product->price}} €</p>
+
                 <div class="form-select">
                     <select id="size" name="size">
                         <option value="0">Taille</option>
@@ -24,7 +27,7 @@
                         <option value="5">XL</option>
                     </select>                   
                 </div>
-                <a class="btn btn-default" href="#" role="button">Buy</a>
+                <a class="btn btn-default" href="#" role="button">Acheter</a>
             </div>
         </div>
     @else 

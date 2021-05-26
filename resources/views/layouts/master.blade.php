@@ -9,20 +9,17 @@
     <link href="{{asset('css/custom.css')}}" rel="stylesheet">
     </head>
     <body>
-        <div class="container">
-            <div class="col-md-12">
-                @include('partials.menu')
-            </div>
+        <div class="nav">
+            @include('partials.menu')
         </div>
+          
         <div class="container">
             <div class="col-md-12">
                 @yield('content')
             </div>
         </div>
-		<div class="container">
-            <div class="col-md-12">
+		<div class="footer">
                 @include('partials.footer')
-            </div>
 		</div>
         <script src="{{asset('js/app.js')}}"></script>
     </body>

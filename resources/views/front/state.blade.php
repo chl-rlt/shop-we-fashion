@@ -2,12 +2,13 @@
 @extends('layouts.master')
 
 @section('content')
-<h1>Les produits</h1>
 @forelse($products as $product)
 
   <div class="col-xs-6 col-sm-4">
     <div class="thumbnail">
-    <img width="171" src="" alt="">
+    @if(count((array)$product->picture) > 0)
+    <img width="171" src="{{asset('images/'.$product->picture)}}" alt="">
+    @endif
       <div class="caption">
         <h3><a href="{{url('product', $product->id)}}">{{$product->name}}</a></h3>
         <p><a href="{{url('product', $product->id)}}">{{$product->price}} €</a></p>
