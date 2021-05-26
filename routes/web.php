@@ -23,4 +23,4 @@ Route::get('/sale', 'FrontController@showProductsSale')->where(['id' => '[0-9]+'
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 // Contrôleur de resource
-Route::resource('/admin', 'ProductController')->middleware('auth');
+Route::resource('admin/product', 'ProductController')->middleware('auth');

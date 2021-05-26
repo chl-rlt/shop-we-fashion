@@ -39,6 +39,6 @@ class LoginController extends Controller
     /* Redirection vers la page dashboard */
     public function redirectTo()
     {
-        return '/admin/';         
+        return 'admin/product';         
     }
 }

@@ -22,7 +22,7 @@ class FrontController extends Controller
 
     public function index(){
 
-        $products = Product::paginate(6);
+        $products = Product::published()->paginate(6);
 
         return view('front.index', ['products' => $products]); // retourne tous les produits de l'application
     }
@@ -50,8 +50,6 @@ class FrontController extends Controller
 
         $products = Product::where('state', 'sale')->paginate(6);
         
-        
-
         return view('front.state', ['products' => $products]);
     }
 }

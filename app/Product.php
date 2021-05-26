@@ -8,7 +8,7 @@ class Product extends Model
 {
 
     protected $fillable = [
-        'name', 'description', 'category_id', 'status', 'state'
+        'name', 'description', 'price', 'size', 'status', 'state', 'reference', 'picture', 'category_id'     
     ];
 
     // ici le setter va récupérer la valeur à insérer en base de données

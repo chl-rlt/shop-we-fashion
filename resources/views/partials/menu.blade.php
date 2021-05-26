@@ -16,15 +16,16 @@
             <li>Aucun genre pour l'instant</li>
             @endforelse
         @else
-            <li><a href="">Produits</a></li>
-            <li><a href="">Catégories</a></li>    
+            <li><a href="product">Produits</a></li>
+            <li><a href="">Catégories</a></li>
+            <li><a href="/"><span class="glyphicon glyphicon-heart" aria-hidden="true"></a></span></li>   
         @endif        
         </ul>
       
       <ul class="nav navbar-nav navbar-right">
         @if(Auth::check())
-        <li><a href="/"><span class="glyphicon glyphicon-heart" aria-hidden="true"></a></span></li>
-        <li><a href="{{route('admin.index')}}">Dashboard</a></li>
+        
+        <li><a href="{{route('product.index')}}">Dashboard</a></li>
         <li>
             <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
             Logout
