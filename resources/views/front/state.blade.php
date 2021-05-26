@@ -21,5 +21,5 @@
 <p>Désolé pour l'instant aucun produit n'est publié sur le site</p>
 @endforelse
 
-<!----pagination bas de page ----->
+{{$products->links()}}
 @endsection 

@@ -18,51 +18,38 @@ class ProductTableSeeder extends Seeder
     {
         // création des catégories
         App\Category::create([
-            'name' => 'female'
+            'name' => 'homme'
         ]);
         App\Category::create([
-            'name' => 'male'
+            'name' => 'femme'
         ]);
+        
 
         // création de 80 produits à partir de la factory
         factory(App\Product::class, 80)->create()->each(function($product){
 
-            // associons une catgeorie à un livre que nous venons de créer
+            // associons une catgeorie à un produit que nous venons de créer
             $category = App\Category::find(rand(1,2));
 
-            // pour chaque $book on lui associe une categorie en particulier
+            // pour chaque $product on lui associe une categorie en particulier
             $product->category()->associate($category);
 
-            $product->save(); // il faut sauvegarder l'association pour faire persister en base de données
 
              // ajout des images
-             $directory = '/images/'; // public/images
-             $files = Storage::allFiles($directory);
-             $randomFile = $files[rand(0,count($files)-1)];
 
-            /*
-             if($files = \Storage::disk('local')->allFiles('images')) {
-                $path = $files[array_rand($files)];
-             }
+             $files = Storage::allFiles($category->name); 
+             $fileIndex = array_rand($files); 
+             $file = $files[$fileIndex]; 
 
-             $randomFile = $files[rand(0, count($files) - 1)];
-             */
-
+             $product->picture = $file; 
 /*
-            
-            $link = str_random(12) . '.jpg'; 
-            $file = file_get_contents('' . rand(1, 9)); 
-            Storage::disk('local')->put($link, $file);
+             $product->picture()->create([
+                'link' => $file
+             ]);*/
 
-            $product->picture()->create([
-                'title' => 'Default', 
-                'link' => $link
-            ]);
-
-            */
+             $product->save(); // il faut sauvegarder l'association pour faire persister en base de données
 
         
-
         }); 
     }
 }

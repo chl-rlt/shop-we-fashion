@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->enum('status', ['published', 'unpublished'])->default('unpublished');
             $table->enum('state', ['sale', 'standard'])->default('standard');
             $table->string('reference', 16)->unique();
+            $table->string('picture')->nullable();
             $table->timestamps();
         });
     }

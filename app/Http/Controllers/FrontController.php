@@ -22,7 +22,7 @@ class FrontController extends Controller
 
     public function index(){
 
-        $products = Product::all();
+        $products = Product::paginate(6);
 
         return view('front.index', ['products' => $products]); // retourne tous les produits de l'application
     }
@@ -41,14 +41,16 @@ class FrontController extends Controller
         // on récupère le modèle category.id 
         $category = Category::find($id);
 
-        $products = $category->products()->paginate(5);
+        $products = $category->products()->paginate(6);
 
         return view('front.category', ['products' => $products, 'category' => $category]);
     }
 
     public function showProductsSale(){
 
-        $products = Product::all()->where('state', 'sale');
+        $products = Product::where('state', 'sale')->paginate(6);
+        
+        
 
         return view('front.state', ['products' => $products]);
     }
