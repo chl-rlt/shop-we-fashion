@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
+<p>{{ $products->total() }} résultats</p>
 @forelse($products as $product)
 
   <div class="col-xs-6 col-sm-4">

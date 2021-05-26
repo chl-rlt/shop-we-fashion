@@ -36,4 +36,9 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+    /* Redirection vers la page dashboard */
+    public function redirectTo()
+    {
+        return '/admin/';         
+    }
 }
