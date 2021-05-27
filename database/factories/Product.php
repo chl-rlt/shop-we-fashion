@@ -7,6 +7,6 @@ $factory->define(App\Product::class, function (Faker $faker) {
         'name' => $faker->name(), 
         'description' => $faker->paragraph(),
         'price' => $faker->randomFloat(2, 9.99, 999.99), 
-        'reference' => $faker->regexify('[A-Za-z0-9]{16}')
+        'reference' => $faker->regexify('[A-Za-z0-9]{16}'),
     ];
 });

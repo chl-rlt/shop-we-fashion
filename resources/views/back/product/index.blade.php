@@ -25,7 +25,7 @@
             <a href="{{route('product.edit', $product->id)}}"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
             </td>
             <td> 
-            <form class="delete" method="POST" action="">
+            <form class="delete" method="POST" action="{{route('product.destroy', $product->id)}}">
                 {{ method_field('DELETE') }}
                 {{ csrf_field() }}
                 <input class="btn btn-danger" type="submit" value="delete" >
@@ -39,4 +39,9 @@
 </table>
 {{$products->links()}}
 @endsection 
+
+@section('scripts')
+    @parent
+    <script src="{{asset('js/confirm.js')}}"></script>
+@endsection
 
