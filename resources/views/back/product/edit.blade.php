@@ -69,8 +69,19 @@
             <div class="input-file">
                 <h2>Image du produit :</h2>
                 <label for="picture"></label>
-                <input class="picture" type="file" name="picture" >
+                <input class="picture" type="file" name="picture" value="{{$product->picture}}">
                 @if($errors->has('picture')) <span class="error bg-warning text-warning">{{$errors->first('picture')}}</span> @endif
+            </div>
+            @if($product->picture)
+            <div class="form-group">
+                <h2>Image associée :</h2>
+                <label for="picture">Title image :</label>
+                <input type="text" name="picture" value="{{$product->picture}}">
+            </div>
+            <div class="form-group">
+            <img width="300" src="{{url('picture', $product->picture)}}" alt="">
+            </div>
+            @endif
             </div>
             </div><!-- #end col md 6 -->
             </form>
