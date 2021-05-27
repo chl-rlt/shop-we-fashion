@@ -3,24 +3,37 @@
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">{{config('app.name')}}</a>
+      @if(Route::is('product.*') == false OR ('category.*') == false)
+        <a class="navbar-brand" href="/">{{config('app.name')}}</a>
+      @else 
+      <a class="navbar-brand" href="#">{{config('app.name')}}</a>
+      @endif
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-        @if(isset($categories))
-            <li><a href="/sale">Soldes</a></li>
+        @if(Route::is('product.*') == false)
+            <li class="list-nav-front"><a href="/sale">Soldes</a></li>
             @forelse($categories as $id => $name)
-            <li><a href="{{url('category', $id)}}">{{$name}}</a></li>
+            <li class="list-nav-front"><a href="{{url('category', $id)}}">{{$name}}</a></li>
             @empty 
-            <li>Aucun genre pour l'instant</li>
+            <li>Aucune categorie pour l'instant</li>
             @endforelse
         @else
-            <li><a href="product">Produits</a></li>
-            <li><a href="">Catégories</a></li>
+            <li><a href="{{ route('product.index') }}">Produits</a></li>
+            <li><a href="{{ route('category.index') }}">Catégories</a></li>
             <li><a href="/"><span class="glyphicon glyphicon-heart" aria-hidden="true"></a></span></li>   
-        @endif        
+        @endif  
+        @if(Route::is('category.*') == true)
+        <style> .list-nav-front{display:none!important;}</style>
+            <li><a href="{{ route('product.index') }}">Produits</a></li>
+
+            <li><a href="{{ route('category.index') }}">Catégories</a></li>
+            
+            <li><a href="/"><span class="glyphicon glyphicon-heart" aria-hidden="true"></a></span></li>     
+        @endif 
         </ul>
+       
       
       <ul class="nav navbar-nav navbar-right">
         @if(Auth::check())
