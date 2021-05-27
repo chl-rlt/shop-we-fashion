@@ -78,9 +78,26 @@ module.exports = __webpack_require__(45);
 
 (function () {
 
-    $(".delete").on("submit", function () {
-        return confirm("Do you want to delete this item?");
-    });
+    // $(".delete").on("click", function () {
+    //     e.preventDefault();
+    // });
+
+//     // $('.delete').on('submit',function (e) {
+
+//     //     $.ajax({
+//     //       type: 'post',
+//     //       url: 'myPageName.php',
+//     //       data: $('#myFormName').serialize(),
+//     //       success: function () {
+//     //        alert("Email has been sent!");
+//     //       }
+//     //     });
+//     // e.preventDefault();
+//   });
+    // $(".close, .popup-overlay").on("click", function() {
+    //     $(".popup-overlay, .popup-content").removeClass("active");
+    //   });
+
 })($);
 
 /***/ })

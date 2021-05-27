@@ -2,6 +2,7 @@
 
 @section('content')
 <p><a href="{{route('category.create')}}"><button type="button" class="btn btn-primary btn-lg">Nouvelle catégorie</button></a></p>
+@include('back.product.partials.flash')
 <table class="table table-striped">
     <thead>
         <tr>

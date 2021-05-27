@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Product; 
 use App\Category; 
+use App\Size; 
 
 class ProductController extends Controller
 {
@@ -24,9 +25,9 @@ class ProductController extends Controller
     public function create()
     {
             // permet de récupérer une collection type array avec en clé id => name
-
+            //$sizes = Size::pluck('name', 'id')->all();
             $categories = Category::pluck('name', 'id')->all();
-            return view('back.product.create', ['categories' => $categories]);
+            return view('back.product.create', ['categories' => $categories/*, 'sizes' => $sizes*/]);
 
         }
 
@@ -43,6 +44,7 @@ class ProductController extends Controller
                 'reference' => 'required|max:16',
                 'picture' => 'image|max:3000',
                 'category_id' => 'integer',
+               // 'size_id' => 'integer',
             ]);
     
             $product = Product::create($request->all()); // associé les fillables
@@ -63,7 +65,7 @@ class ProductController extends Controller
 
             $product->save();
         
-            return redirect()->route('product.index')->with('message', 'success');
+            return redirect()->route('product.index')->with('message', 'Le produit a bien été ajouté ! ');
     
     
         }
@@ -112,7 +114,7 @@ class ProductController extends Controller
             $product->save();
         
 
-            return redirect()->route('product.index')->with('message', 'success');
+            return redirect()->route('product.index')->with('message', 'Produit mis à jour !');
 
         }
 
@@ -129,7 +131,7 @@ class ProductController extends Controller
 
             $product->delete();
 
-            return redirect()->route('product.index')->with('message', 'success delete');
+            return redirect()->route('product.index')->with('message', 'Suppression réussie !');
         }
 
         

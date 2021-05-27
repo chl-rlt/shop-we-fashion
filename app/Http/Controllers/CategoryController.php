@@ -39,7 +39,7 @@ class CategoryController extends Controller
 
             $category->save();
 
-            return redirect()->route('category.index')->with('message', 'success');
+            return redirect()->route('category.index')->with('message', 'La catégorie a bien été mise à jour');
 
         }
 
@@ -65,7 +65,7 @@ class CategoryController extends Controller
 
             $category->save();
         
-            return redirect()->route('category.index')->with('message', 'success');
+            return redirect()->route('category.index')->with('message', 'La catégorie a bien été créé');
     
     
     }
@@ -76,7 +76,7 @@ class CategoryController extends Controller
 
         $category->delete();
 
-        return redirect()->route('category.index')->with('message', 'success delete');
+        return redirect()->route('category.index')->with('message', 'Suppression réussie !');
         
     }
 

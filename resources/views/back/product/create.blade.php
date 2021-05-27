@@ -55,6 +55,8 @@
                             <input type="checkbox" @if(old('size')=='XL') checked @endif name="size" value="XL" checked> XL<br>   
                         </div>
                     </div>
+
+                    
                 <div class="input-radio">
             <h2>État</h2>
             <input type="radio" @if(old('state')=='sale') checked @endif name="state" value="sale" checked> En solde<br>
