@@ -22,7 +22,7 @@
         @else
             <li><a href="{{ route('product.index') }}">Produits</a></li>
             <li><a href="{{ route('category.index') }}">Catégories</a></li>
-            <li><a href="/"><span class="glyphicon glyphicon-heart" aria-hidden="true"></a></span></li>   
+            <li class="link-home"><a href="/">Boutique <span class="glyphicon glyphicon-heart" aria-hidden="true"></a></span></li>   
         @endif  
         @if(Route::is('category.*') == true)
         <style> .list-nav-front{display:none!important;}</style>
@@ -30,7 +30,7 @@
 
             <li><a href="{{ route('category.index') }}">Catégories</a></li>
             
-            <li class="link-home"><a href="/"><span class="glyphicon glyphicon-heart" aria-hidden="true"></a></span></li>     
+            <li class="link-home"><a href="/">Boutique <span class="glyphicon glyphicon-heart" aria-hidden="true"></a></span></li>     
         @endif 
         </ul>
        

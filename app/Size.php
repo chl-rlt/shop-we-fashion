@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Size extends Model
 {
-   /* protected $fillable = [
+    protected $fillable = [
         'name',  
     ];
     
     public function products(){
-        return $this->hasMany(Product::class);
-        }*/ 
+        return $this->belongsToMany(Product::class);
+        }
 }

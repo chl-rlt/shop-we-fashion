@@ -31,7 +31,7 @@
             <form class="delete" method="POST" action="{{route('product.destroy', $product->id)}}">
                 {{ method_field('DELETE') }}
                 {{ csrf_field() }}
-                <input type="button" value="delete" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                <input type="button" value="X" class="btn btn-primary btn-lg delete-button" data-toggle="modal" data-target="#myModal">
                  <!-- Modal -->
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
@@ -45,7 +45,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-                        <button type="submit" value="delete" class="btn btn-primary">Ok</button>
+                        <button type="submit" value="delete" class="btn btn-primary delete-ok">Ok</button>
                     </div>
                     </div>
                 </div>

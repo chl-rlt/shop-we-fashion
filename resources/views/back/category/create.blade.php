@@ -3,8 +3,8 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
-                <h1>Ajouter une nouvelle categorie : </h1>
+            <div class="col-md-6 create-category">
+                <h2>Ajouter une nouvelle categorie : </h2>
                 <form action="{{route('category.store')}}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="form">
@@ -14,7 +14,7 @@
                                    placeholder="Nom de la categorie">
                             @if($errors->has('name')) <span class="error bg-warning text-warning">{{$errors->first('name')}}</span>@endif
                         </div>
-                        <button type="submit" class="btn btn-primary">Ajouter</button>
+                        <button type="submit" class="btn btn-primary button-ok">Ajouter</button>
                     </div>
             
                 </form>

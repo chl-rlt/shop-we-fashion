@@ -36,4 +36,10 @@ class Product extends Model
         return $this->hasOne(Picture::class);
         }
         
+    public function sizes(){
+        return $this->belongsToMany(Size::class);
+        }
+
+    
+        
 }

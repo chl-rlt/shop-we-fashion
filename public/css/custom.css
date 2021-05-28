@@ -1,12 +1,36 @@
 body {
-    color: #2D2D2D;
+    color: #777;
     font-family: 'futura-pt',sans-serif;
     background-color: #FFFBF9;
+}
+
+a {
+    color: #777;
+}
+
+a:hover {
+    color: #777;
 }
 
 a:hover{
     text-decoration: none;
 }
+
+.form-control{
+    border-color:#D1CAC5;  
+}
+
+.form-control:focus{
+    border-color:#777;  
+    box-shadow: none;
+}
+
+.container.body {
+    margin-bottom: 40px;
+}
+
+
+
 /* Menu */
 /* Logo */
 
@@ -33,7 +57,7 @@ li.log {
 }
 
 li.link-home {
-    margin-left: 548Px;
+    margin-left: 494Px;
 }
 
 p.total-products {
@@ -41,9 +65,6 @@ p.total-products {
     margin-right: 40px;
     color: #777777;
 }
-
-
-
 
 /* Image produit */
 
@@ -174,6 +195,152 @@ select#size{
 
 .table > thead > tr > th {
     border-bottom: 2px solid #F5EDE6;
+}
+
+span.glyphicon.glyphicon-edit {
+    background: #F5EDE6;
+    padding: 13px;
+    border-radius: 26px;
+}
+
+input.btn.btn-primary.btn-lg.delete-button{
+    background: #F5EDE6;
+    border-color: #F5EDE6;
+    padding: 7px 13px;
+    border-radius: 23px;
+    color: #777777;
+}
+
+
+
+button.btn.btn-primary.btn-lg{
+    color: #fff;
+    background-color: #D1CAC5;
+    border-color: #D1CAC5;
+    padding: 11px 48px;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+button.btn.btn-primary.delete-ok{
+    background-color: #D1CAC5;
+    border-color: #D1CAC5;
+}
+
+input.btn.btn-danger.delete-button{
+    background: #F5EDE6;
+    border-color: #F5EDE6;
+    padding: 7px 13px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 23px;
+    color: #777777;
+}
+
+/** Partie Administration edit/create **/
+
+.container.form-edit{
+    margin-bottom: 40px;
+}
+.row.form-edit {
+    background-color: #fff;
+    border-radius: 22px;
+    padding: 32px;
+}
+
+.col-md-6.form-part-2 {
+    margin-top: 67px;
+}
+
+label.title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.col-md-6.form-part-2 h5{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.col-md-6.form-part-2 .input-file{
+    margin-top: 20px;
+}
+.col-md-6.form-part-2 .input-radio{
+    margin-top: 20px;
+}
+
+.col-md-6.form-part-2  .form-group.img-old {
+    margin-top: 20px;
+}
+
+.col-md-6.form-part-2 input[type="checkbox"]{
+    margin:0; 
+}
+
+.col-md-6.form-part-2 .form-control.checkbox-form-edit{
+    height: 15px;
+    margin-right: 10px;
+}
+
+
+.btn-primary.form-edit {
+    color: #fff;
+    background-color: #D1CAC5;
+    border-color: #D1CAC5;
+    padding: 11px 78px;
+    font-size: 16px;
+    text-transform: uppercase;
+    display: block;
+    margin: auto;
+}
+
+.col-md-6.form-part-2 .input-radio.new-product{
+    margin-top: 40px;
+}
+
+button.btn.btn-primary.button-ok{
+    color: #fff;
+    background-color: #D1CAC5;
+    border-color: #D1CAC5;
+    padding: 11px 78px;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+/** CRUD category / create */
+
+.col-md-6.create-category {
+    background-color: #ffffff;
+    padding: 23Px 46px 41px 46px;
+}
+
+/* Page login **/ 
+
+.panel-default{
+    border-color: #D1CAC5;
+}
+.panel-default > .panel-heading {
+    color: #777;
+    background-color: #fff;
+    border-color: #D1CAC5;
+}
+
+.btn-primary{
+    background-color: #D1CAC5;
+    border-color: #D1CAC5;
+}
+.btn-primary:hover{
+    background-color: #D1CAC5;
+    border-color: #D1CAC5;
+
+}
+
+.btn-link{
+    color: #D1CAC5;
+}
+
+.btn-link:hover{
+    color: #D1CAC5;
 }
 
 

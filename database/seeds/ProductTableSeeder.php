@@ -26,7 +26,7 @@ class ProductTableSeeder extends Seeder
         ]);
 
         // création des tailles 
-/*
+
         App\Size::create([
             'name' => 'XS'
         ]);
@@ -41,7 +41,7 @@ class ProductTableSeeder extends Seeder
         ]);
         App\Size::create([
             'name' => 'XL'
-        ]);*/
+        ]);
         
 
         // création de 80 produits à partir de la factory
@@ -64,12 +64,17 @@ class ProductTableSeeder extends Seeder
              $file = $files[$fileIndex]; 
 
              $product->picture = $file; 
-/*
-             $product->picture()->create([
-                'link' => $file
-             ]);*/
+            
+            // ajout des tailles 
 
-             $product->save(); // il faut sauvegarder l'association pour faire persister en base de données
+            $sizes = App\Size::pluck('id')->shuffle()->slice(0, rand(1, 5))->all(); 
+            $filter_sizes = array_values(array_sort($sizes, function ($value) {
+                return $value; 
+            }));
+
+            $product->sizes()->attach($filter_sizes); 
+
+            $product->save(); // il faut sauvegarder l'association pour faire persister en base de données
 
         
         }); 

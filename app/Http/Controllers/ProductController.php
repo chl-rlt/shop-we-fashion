@@ -25,9 +25,9 @@ class ProductController extends Controller
     public function create()
     {
             // permet de récupérer une collection type array avec en clé id => name
-            //$sizes = Size::pluck('name', 'id')->all();
+            $sizes = Size::pluck('name', 'id')->all();
             $categories = Category::pluck('name', 'id')->all();
-            return view('back.product.create', ['categories' => $categories/*, 'sizes' => $sizes*/]);
+            return view('back.product.create', ['categories' => $categories, 'sizes' => $sizes]);
 
         }
 
@@ -38,17 +38,18 @@ class ProductController extends Controller
                 'name' => 'required|min:5|max:100',
                 'description' => 'string',
                 'price' => 'required|numeric', 
-                'size' => 'required|in:XS,S,M,L,XL',
                 'status' => 'required|in:published,unpublished',
                 'state' => 'required|in:sale,standard',
                 'reference' => 'required|max:16',
                 'picture' => 'image|max:3000',
                 'category_id' => 'integer',
-               // 'size_id' => 'integer',
+                'size_id' => 'integer',
             ]);
     
             $product = Product::create($request->all()); // associé les fillables
             
+            $product->sizes()->attach($request->sizes);
+
             // image 
             $im = $request->file('picture');
             $cat_name = $request->input('category_id'); 
@@ -73,9 +74,11 @@ class ProductController extends Controller
         public function edit($id)
         {
             $product = Product::find($id);
+
+            $sizes = Size::pluck('name', 'id')->all();
             $categories = Category::pluck('name', 'id')->all();
 
-            return view('back.product.edit', compact('product', 'categories'));
+            return view('back.product.edit', compact('product', 'sizes', 'categories'));
 
         }
 
@@ -85,7 +88,6 @@ class ProductController extends Controller
                 'name' => 'required|min:5|max:100',
                 'description' => 'string',
                 'price' => 'required', 
-                'size' => 'required|in:XS,S,M,L,XL',
                 'status' => 'required|in:published,unpublished',
                 'state' => 'required|in:sale,standard',
                 'reference' => 'required|max:16',
@@ -96,6 +98,9 @@ class ProductController extends Controller
             $product = Product::find($id); // il faudra récupérer le livre que vous souhaitez modifier 
 
             $product->update($request->all()); // mettre à jour les données du livre
+
+            // on utilisera la méthode sync pour mettre à jour les tailles dans la table de liaison
+            $product->sizes()->sync($request->sizes);
 
             // image 
             $im = $request->file('picture');

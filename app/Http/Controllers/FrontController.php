@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Product; 
 use App\Category; 
+use App\Size; 
 
 class FrontController extends Controller
 {
@@ -32,9 +33,11 @@ class FrontController extends Controller
 
         // vous ne récupérez qu'un seul livre 
         $product = Product::find($id);
+        $size = Size::find($id);
+        
 
         // que vous passez à la vue
-        return view('front.show', ['product' => $product]);
+        return view('front.show', ['product' => $product, 'size' => $size]);
     }
 
     public function showProductsByCategory(int $id){
