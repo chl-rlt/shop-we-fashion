@@ -76,3 +76,7 @@
 
 </div>
 @endsection
+@section('scripts')
+@parent
+<script src="{{asset('js/confirm.js')}}"></script>
+@endsection

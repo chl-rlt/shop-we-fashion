@@ -78,6 +78,19 @@ module.exports = __webpack_require__(45);
 
 (function () {
 
+    console.log('kikou')
+
+    $( ".fa.fa-bars" ).click(function() {
+        $('.collapse').show();
+        $(".fa.fa-bars").hide(); 
+        $(".fa.fa-times").show(); 
+      });
+
+      $( ".fa.fa-times" ).click(function() {
+        $('.collapse').hide();
+        $(".fa.fa-bars").show(); 
+        $(".fa.fa-times").hide(); 
+      });
 })($);
 
 /***/ })

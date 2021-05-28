@@ -1,14 +1,16 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" >
   <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       @if(Route::is('product.*') == false OR ('category.*') == false)
       <a class="navbar-brand" href="/">{{config('app.name')}}</a>
+      <a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
       @else
       <a class="navbar-brand" href="#">{{config('app.name')}}</a>
+      <a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
       @endif
     </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         @if(Route::is('product.*') == false)

@@ -36,6 +36,13 @@ a:hover{
 /* Menu */
 /* Logo */
 
+.fa.fa-bars {
+    display: none;
+}
+.fa.fa-times {
+    display: none;
+}
+
 .navbar-default {
     background-color: #ffffff;
     border-color:#F5EDE6 ;
@@ -64,7 +71,7 @@ li.log {
 }
 
 li.link-home {
-    margin-left: 494Px;
+    margin-left: 374Px;
 }
 
 p.total-products {
@@ -345,5 +352,60 @@ button.btn.btn-primary.button-ok{
 .btn-link:hover{
     color: #D1CAC5;
 }
+
+
+/** Responsive */
+@media(max-width:760px){
+    .fa.fa-bars {
+        display: block;
+        margin-top: 17px;
+        float: right;
+        margin-right: 97px;
+    } 
+
+    i.fa.fa-times {
+        margin-top: 17px;
+        float: right;
+        margin-right: 97px;
+    }
+
+    li.link-home {
+        margin-left: 0Px;
+    }
+
+    
+
+}
+@media(max-width:500px){
+    .nav{
+        width: 100%;
+    }
+
+    
+
+    .thumbnail > img, .thumbnail a > img {
+        width: 134px;
+        height: 179px;
+        object-fit: cover;
+    }
+    .col-xs-12.col-sm-6.col-md-8.col-image {
+        margin-left: 19px;
+        width: 86%;
+    }
+    .col-xs-6.col-md-4.col-infos {
+        margin-left: 19px;
+        width: 100%;
+    }
+
+    .container > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-header, .container-fluid > .navbar-collapse {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    li.link-home {
+        margin-left: 0px;
+    }
+}
+
 
 

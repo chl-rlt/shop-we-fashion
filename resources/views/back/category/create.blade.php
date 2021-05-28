@@ -21,3 +21,7 @@
     </div><!-- #end col md 6 -->
 </div>
 @endsection
+@section('scripts')
+@parent
+<script src="{{asset('js/confirm.js')}}"></script>
+@endsection
