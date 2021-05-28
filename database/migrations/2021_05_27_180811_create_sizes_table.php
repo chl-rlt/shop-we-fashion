@@ -17,7 +17,6 @@ class CreateSizesTable extends Migration
             $table->increments('id');
             $table->string('name'); // VARCHAR 100
             $table->timestamps();
-
         });
     }
 

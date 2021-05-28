@@ -66,13 +66,13 @@
                 <input class="picture" type="file" name="picture">
                 @if($errors->has('picture')) <span class="error bg-warning text-warning">{{$errors->first('picture')}}</span> @endif
             </div>
-           
-           
+
+
         </div><!-- #end col md 6 -->
         <button type="submit" class="btn btn-primary form-edit">Ajouter</button>
         </form>
-        
+
     </div>
-   
+
 </div>
 @endsection

@@ -8,38 +8,39 @@ class Product extends Model
 {
 
     protected $fillable = [
-        'name', 'description', 'price', 'size', 'status', 'state', 'reference', 'picture', 'category_id'     
+        'name', 'description', 'price', 'size', 'status', 'state', 'reference', 'picture', 'category_id'
     ];
 
     // ici le setter va récupérer la valeur à insérer en base de données
     // nous pourrons alors vérifier sa valeur avant que le modèle n'insère la donnée en base de données
-    public function setCategoryIdAttribute($value){
-       
-        if($value == 0){
+    public function setCategoryIdAttribute($value)
+    {
+
+        if ($value == 0) {
             $this->attributes['category_id'] = null;
-        }else{
+        } else {
 
             $this->attributes['category_id'] = $value;
         }
-
     }
 
-    public function scopePublished($query){
+    public function scopePublished($query)
+    {
         return $query->where('status', 'published');
     }
 
-    public function category(){
+    public function category()
+    {
         return $this->belongsTo(Category::class);
-        }
-        
-    public function picture(){
-        return $this->hasOne(Picture::class);
-        }
-        
-    public function sizes(){
-        return $this->belongsToMany(Size::class);
-        }
+    }
 
-    
-        
+    public function picture()
+    {
+        return $this->hasOne(Picture::class);
+    }
+
+    public function sizes()
+    {
+        return $this->belongsToMany(Size::class);
+    }
 }

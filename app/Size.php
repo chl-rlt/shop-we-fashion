@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Size extends Model
 {
     protected $fillable = [
-        'name',  
+        'name',
     ];
-    
-    public function products(){
+
+    public function products()
+    {
         return $this->belongsToMany(Product::class);
-        }
+    }
 }

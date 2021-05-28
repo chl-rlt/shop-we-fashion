@@ -13,10 +13,10 @@ class UserTableSeeder extends Seeder
     {
         DB::table('users')->insert([
             [
-            'name' => 'edouard',
-            'email' => 'edouard@admin.fr',
-            'password' => Hash::make('rootroot'), // crypté le mot de passe ,
+                'name' => 'edouard',
+                'email' => 'edouard@admin.fr',
+                'password' => Hash::make('rootroot'), // crypté le mot de passe ,
             ]
-            ]);
+        ]);
     }
 }

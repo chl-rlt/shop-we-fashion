@@ -12,29 +12,28 @@
         </tr>
     </thead>
     <tbody>
-    @forelse($categories as $category)
+        @forelse($categories as $category)
         <tr>
             <td>{{$category->name}}</td>
             <td>
-            <a href="{{route('category.edit', $category->id)}}"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+                <a href="{{route('category.edit', $category->id)}}"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
             </td>
-            <td> 
-            <form class="delete" method="POST" action="{{route('category.destroy', $category->id)}}">
-                {{ method_field('DELETE') }}
-                {{ csrf_field() }}
-                <input class="btn btn-danger delete-button" type="submit" value="X" >
-            </form>
+            <td>
+                <form class="delete" method="POST" action="{{route('category.destroy', $category->id)}}">
+                    {{ method_field('DELETE') }}
+                    {{ csrf_field() }}
+                    <input class="btn btn-danger delete-button" type="submit" value="X">
+                </form>
             </td>
         </tr>
-    @empty
+        @empty
         aucun titre ...
-    @endforelse
+        @endforelse
     </tbody>
 </table>
-@endsection 
-
-@section('scripts')
-    @parent
-    <script src="{{asset('js/confirm.js')}}"></script>
 @endsection
 
+@section('scripts')
+@parent
+<script src="{{asset('js/confirm.js')}}"></script>
+@endsection
