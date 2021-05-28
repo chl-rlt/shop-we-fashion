@@ -30,7 +30,7 @@
 
             <li><a href="{{ route('category.index') }}">Catégories</a></li>
             
-            <li><a href="/"><span class="glyphicon glyphicon-heart" aria-hidden="true"></a></span></li>     
+            <li class="link-home"><a href="/"><span class="glyphicon glyphicon-heart" aria-hidden="true"></a></span></li>     
         @endif 
         </ul>
        
@@ -39,7 +39,7 @@
         @if(Auth::check())
         
         <li><a href="{{route('product.index')}}">Dashboard</a></li>
-        <li>
+        <li class="log">
             <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
             Logout
             </a>
@@ -50,7 +50,7 @@
         </li>
                 
         @else
-        <li><a href="{{route('login')}}">Login</a></li>
+        <li class="log"><a href="{{route('login')}}">Login</a></li>
         @endif
         </ul>
       

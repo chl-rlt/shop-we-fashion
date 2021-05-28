@@ -2,7 +2,9 @@
 @extends('layouts.master')
 
 @section('content')
-<p>{{ $products->total() }} résultats</p>
+<div class="row">
+<p class="total-products">{{ $products->total() }} résultats</p>
+</div>
 @forelse($products as $product)
 
   <div class="col-xs-6 col-sm-4">

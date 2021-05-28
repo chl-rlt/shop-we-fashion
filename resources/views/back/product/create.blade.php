@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h1>Ajouter un nouveau produit : </h1>
+                <h2>Ajouter un nouveau produit : </h2>
                 <form action="{{route('product.store')}}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="form">
@@ -73,7 +73,9 @@
                 <input class="picture" type="file" name="picture" >
                 @if($errors->has('picture')) <span class="error bg-warning text-warning">{{$errors->first('picture')}}</span> @endif
             </div>
-            </div><!-- #end col md 6 -->
+           
             </form>
+            </div><!-- #end col md 6 -->
         </div>
+</div>
 @endsection

@@ -37,7 +37,7 @@ class ProductController extends Controller
             $this->validate($request, [ // méthide pour sécurisé et vérifier les données que l'on envoit en BDD
                 'name' => 'required|min:5|max:100',
                 'description' => 'string',
-                'price' => 'required', 
+                'price' => 'required|numeric', 
                 'size' => 'required|in:XS,S,M,L,XL',
                 'status' => 'required|in:published,unpublished',
                 'state' => 'required|in:sale,standard',

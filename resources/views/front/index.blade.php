@@ -2,13 +2,15 @@
 @extends('layouts.master')
 
 @section('content')
-<p>{{ $products->total() }} résultats</p>
+<div class="row">
+<p class="total-products">{{ $products->total() }} résultats</p>
+</div>
 @forelse($products as $product)
 
   <div class="col-xs-6 col-sm-4">
     <div class="thumbnail">
     @if(count((array)$product->picture) > 0)
-    <img width="171" src="{{asset('images/'.$product->picture)}}" alt="">
+    <a href="{{url('product', $product->id)}}"><img width="171" src="{{asset('images/'.$product->picture)}}" alt=""></a>
     @endif
       <div class="caption">
         <h3><a href="{{url('product', $product->id)}}">{{$product->name}}</a></h3>
@@ -19,6 +21,7 @@
 @empty
 <p>Désolé pour l'instant aucun produit n'est publié sur le site</p>
 @endforelse
+
 
 {{$products->links()}} 
 @endsection 

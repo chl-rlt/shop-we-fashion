@@ -20,9 +20,12 @@
             <div class="col-md-4">
             <h4>Réseaux sociaux</h4>
             <ul>
-                <li><a href="#">Facebook<i class="fa fa-facebook-square fa-3x social"></i></a></li>
-                <li><a href="#">Livraison & Retour</a></li>
-                <li><a href="#">Conditions de vente</a></li>
+                <li>
+                    <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </li>
+                
+                <li><a href="#">Inscrivez-vous à la newsletter</a></li>
             </ul>
             
             </div>
