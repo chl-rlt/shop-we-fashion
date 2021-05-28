@@ -9,7 +9,7 @@
 <div class="col-xs-6 col-sm-4">
   <div class="thumbnail">
     @if(count((array)$product->picture) > 0)
-    <img width="171" src="{{asset('images/'.$product->picture)}}" alt="">
+    <a href="{{url('product', $product->id)}}"><img width="171" src="{{asset('images/'.$product->picture)}}" alt=""></a>
     @endif
     <div class="caption">
       <h3><a href="{{url('product', $product->id)}}">{{$product->name}}</a></h3>
