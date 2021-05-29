@@ -177,6 +177,10 @@ i.fa.fa-instagram {
 
 /* Page produit */
 
+.show-product-mobile{
+    display: none;
+}
+
 .col-xs-12.col-sm-6.col-md-8.col-image {
     margin-left: 23px;
     width: 50%;
@@ -248,6 +252,10 @@ input.btn.btn-danger.delete-button{
 }
 
 /** Partie Administration edit/create **/
+
+ul.nav.navbar-nav {
+    text-transform: uppercase;
+}
 
 .container.form-edit{
     margin-bottom: 40px;
@@ -371,6 +379,21 @@ button.btn.btn-primary.button-ok{
 
     li.link-home {
         margin-left: 0Px;
+    }
+
+    .show-product-destop {
+        display: none;
+    }
+
+    .show-product-mobile{
+        display: block;
+    }
+
+    .caption p a {
+        font-size: 11px;
+    }
+    .caption h3 a {
+        font-size: 10Px;
     }
 
     

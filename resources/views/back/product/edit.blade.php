@@ -81,7 +81,7 @@
             </div>
             @endif
         </div>
-        <button type="submit" class="btn btn-primary form-edit">Ajouter</button>
+        <button type="submit" class="btn btn-primary form-edit">Modifier</button>
     </div><!-- #end col md 6 -->
     </form>
 </div>
